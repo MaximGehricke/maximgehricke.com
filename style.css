@@ -186,6 +186,17 @@ a {
 	letter-spacing: 1.5px;
 }
 
+.video-overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Ensures it sits directly above the iframe */
+  background: transparent; /* Invisible but clickable */
+  cursor: pointer;
+}
+
 
 
 /* ============================================================
@@ -406,7 +417,7 @@ a {
 		margin: 1% 25% 0 25%;
 		align-content: center;
 		position: relative;
-		padding-top: 28.125%;
+		
 	}
 
 	.reelvideo {
