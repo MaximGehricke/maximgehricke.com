@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+/* ============================================================
+   CSS Custom Properties (Design Tokens)
+   ============================================================ */
+:root {
+	/* Colors */
+	--color-bg: #a8a8a8;
+	--color-text: aliceblue;
+	--color-accent: grey;
+	--color-footer-bg: rgba(30, 30, 30, 0.8);
+	--color-textbg: rgba(78, 78, 78, 0.55);
+
+	/* Fonts */
+	--font-primary: "sourcepro", sans-serif;
+	--font-secondary: "Lato", sans-serif;
+	--font-italic: "italic", sans-serif;
+
+	/* Font Sizes */
+	--text-sm: 14px;
+	--text-base: 17px;
+
+	/* Z-index layers */
+	--z-nav: 100;
+}
+
+/* ============================================================
+   Font Faces
+   ============================================================ */
+@font-face {
+	font-family: "sourcepro";
+	src: url(../fonts/source_sans_pro/sourcesanspro-extralight.ttf);
+}
+@font-face {
+	font-family: "Lato";
+	src: url(../fonts/lato/lato-light.ttf);
+}
+@font-face {
+	font-family: "italic";
+	src: url(../fonts/open_sans/opensans-lightitalic.ttf);
+}
+
+/* ============================================================
+   Base / Reset
+   ============================================================ */
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* ============================================================
+   Background
+   ============================================================ */
+.bg {
+	background-color: var(--color-bg);
+	background-image: url("../images/background_img.jpg");
+	background-blend-mode: multiply;
+	background-position-x: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+.font1 {
+	font-family: var(--font-primary);
+	font-size: var(--text-base);
+	text-decoration: none;
+	color: var(--color-text);
+	letter-spacing: 1.5px;
+}
+
+.font2 {
+	font-family: var(--font-secondary);
+	font-size: 27px;
+	text-decoration: none;
+	color: var(--color-text);
+	letter-spacing: 1px;
+}
+
+.fontitalic {
+	font-family: var(--font-italic);
+	text-decoration: none;
+	letter-spacing: 3px;
+}
+
+/* ============================================================
+   Back Button
+   ============================================================ */
+.back {
+	margin: 1.8vw;
+	filter: grayscale(100%) brightness(1.5);
+	width: 2.5vw;
+	height: 2.5vw;
+}
+
+.back:hover {
+	filter: grayscale(0%) brightness(0.5);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+#footer {
+	height: 100px;
+	background: var(--color-footer-bg);
+	margin: 0;
+	width: 100%;
+	position: relative;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#footertext {
+	font-size: 15px;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+/* ============================================================
+   Content Sections
+   ============================================================ */
+.reeldiv {
+	margin: 5%;
+	padding: 30vw 35vw 10vw 10vw;
+	position: relative;
+}
+
+.textbg {
+	background-color: var(--color-textbg);
+	border-radius: 12px;
+	margin: 2% 15%;
+	position: relative;
+	align-content: center;
+	display: inline-block;
+	overflow-wrap: break-word;
+	width: 70%;
+}
+
+.text {
+	font-size: 100%;
+	margin: 2% 5%;
+}
+
+/* ============================================================
+   DESKTOP LAYOUT (min-width: 670px)
+   ============================================================ */
+@media only screen and (min-width: 670px) {
+
+	.mobileOnly {
+		display: none;
+	}
+
+	.desktopOnly {
+		display: block;
+	}
+
+	.title {
+		font-size: 150%;
+		text-align: center;
+		margin: 2% 5% 1% 5%;
+	}
+
+	/* --- Back Link --- */
+	#back {
+		font-size: 1.3vw;
+		display: inline;
+		border-width: thin;
+		text-align: left;
+		margin: 30px 20px 20px 60px;
+		box-sizing: border-box;
+		position: fixed;
+		padding: 5px 10px;
+		z-index: var(--z-nav);
+	}
+
+	#back:hover {
+		color: var(--color-accent);
+	}
+
+	/* --- Footer --- */
+	#footer {
+		margin-top: 20%;
+	}
+
+	.text {
+		font-size: 145%;
+	}
+}
+
+/* ============================================================
+   MOBILE LAYOUT (max-width: 670px)
+   ============================================================ */
+@media only screen and (max-width: 670px) {
+
+	.mobileOnly {
+		display: block;
+	}
+
+	.desktopOnly {
+		display: none;
+	}
+
+	.title {
+		font-size: 100%;
+		text-align: center;
+		margin: 2% 5% 1% 5%;
+	}
+
+	.reeldiv {
+		margin: 5%;
+		padding: 50vw 35vw 10vw 10vw;
+		position: relative;
+	}
+
+	.text {
+		font-size: 70%;
+		margin: 2% 5%;
+	}
+
+	#back {
+		font-size: 4vw;
+		display: block;
+		text-align: center;
+		margin: 10px auto;
+		padding: 5px 10px;
+	}
+
+	/* --- Footer --- */
+	#footer {
+		margin-top: 80vw;
+		margin-bottom: 0;
+	}
+}
